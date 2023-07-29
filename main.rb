@@ -1,16 +1,17 @@
 require_relative 'app'
 
 class LibraryApp
+  OPTIONS = {
+    '1' => :list_books,
+    '2' => :list_people,
+    '3' => :create_person,
+    '4' => :create_book,
+    '5' => :create_rental,
+    '6' => :list_rentals_by_person_id,
+    '7' => :exit_app
+  }.freeze
+
   def initialize
-    @content = {
-      '1' => 'List all books',
-      '2' => 'List all people',
-      '3' => 'Create a person (teacher or student)',
-      '4' => 'Create a book',
-      '5' => 'Create a rental',
-      '6' => 'List all rentals for a given person id',
-      '7' => 'Exit'
-    }
     @app = App.new
   end
 
@@ -20,37 +21,54 @@ class LibraryApp
 
   def display_menu
     puts "\nPlease enter a number: "
-    @content.each { |index, string| puts "#{index} - #{string}" }
+    OPTIONS.each { |index, string| puts "#{index} - #{string.capitalize}" }
   end
 
-  option = gets.chomp.to_i
-  case option
-  when 1
+  def handle_option(option)
+    action = OPTIONS[option]
+    if action
+      send(action)
+    else
+      puts 'You are out of range'
+    end
+  end
+
+  def list_books
     @app.list_books
-  when 2
+  end
+
+  def list_people
     @app.list_people
-  when 3
+  end
+
+  def create_person
     @app.create_person
-  when 4
+  end
+
+  def create_book
     @app.create_book
-  when 5
+  end
+
+  def create_rental
     @app.create_rental
-  when 6
+  end
+
+  def list_rentals_by_person_id
     @app.list_rentals_by_person_id
-  when 7
+  end
+
+  def exit_app
     puts 'You made a good choice'
     exit
-  else
-    puts 'You are out of range'
   end
-end
 
-def main
-  welcome_message
-  loop do
-    display_menu
-    option = gets.chomp.to_i
-    handle_option(option)
+  def main
+    welcome_message
+    loop do
+      display_menu
+      option = gets.chomp
+      handle_option(option)
+    end
   end
 end
 

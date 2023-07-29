@@ -132,12 +132,4 @@ class App
     book.add_rentals(rental)
     puts 'Rental created successfuly'
   end
-
-  # app = App.new()
-  # app.create_person
-  # app.list_people
-  # app.create_book
-  # app.list_books
-  # app.create_rental
-  # app.list_rentals_by_person_id
 end
