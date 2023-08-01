@@ -5,7 +5,6 @@ require './book'
 require './rental'
 require './prompt_user'
 
-
 class App
   attr_reader :books, :people, :rentals
 
