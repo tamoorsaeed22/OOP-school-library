@@ -64,3 +64,22 @@ class SaveData
     rentals_array
   end
 
+  def build_rental_object(rental)
+    rental_obj = {
+      date: rental.date,
+      title: rental.book.title,
+      author: rental.book.author,
+      id: rental.person.id,
+      name: rental.person.name,
+      age: rental.person.age,
+      has_permission: rental.person.parent_permission,
+      type: rental.person.type
+    }
+    if rental.person.type == 'Student'
+      rental_obj[:classroom] = rental.person.classroom
+    else
+      rental_obj[:specialization] = rental.person.specialization
+    end
+    rental_obj
+  end
+end
