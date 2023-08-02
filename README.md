@@ -123,6 +123,11 @@ You can deploy this project using:
 - Twitter: [@twitterhandle](https://www.linkedin.com/in/tamoor-saeed-58912a233/)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
+👤 **Felix KAMANA**
+
+- GitHub: [@githubhandle](https://github.com/fezzopro)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/kamana-felix)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
