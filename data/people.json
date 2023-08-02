@@ -1,0 +1,18 @@
+[
+  {
+    "id": 98,
+    "name": "Rosy",
+    "age": 17,
+    "has_permission": false,
+    "type": "Student",
+    "classroom": "d121"
+  },
+  {
+    "id": 49,
+    "name": "kingsey",
+    "age": 47,
+    "has_permission": true,
+    "type": "Teacher",
+    "specialization": "Doctor"
+  }
+]
